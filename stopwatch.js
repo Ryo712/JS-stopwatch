@@ -12,11 +12,15 @@ function timeToString(time) {
     let diffInSec = (diffInMin - mm) * 60;
     let ss = Math.floor(diffInSec);
 
+    let diffInMs = (diffInSec - ss) * 100;
+    let ms = Math.floor(diffInMs);
+
     let formattedHH = hh.toString().padStart(2, "0");
     let formattedMM = mm.toString().padStart(2, "0");
     let formattedSS = ss.toString().padStart(2, "0");
+    let formattedMS = ms.toString().padStart(2, "0");
 
-    return `${formattedHH}:${formattedMM}:${formattedSS}`;
+    return `${formattedHH}:${formattedMM}:${formattedSS}:${formattedMS}`;
 }
 
 function printTime() {
@@ -26,7 +30,7 @@ function printTime() {
 
 function start() {
     startTime = Date.now() - elapsedTime;
-    timerInterval = setInterval(printTime, 1000);
+    timerInterval = setInterval(printTime, 10); // 10ミリ秒ごとに更新
     document.getElementById("startStop").innerHTML = "停止";
 }
 
@@ -38,7 +42,7 @@ function stop() {
 function reset() {
     clearInterval(timerInterval);
     elapsedTime = 0;
-    document.getElementById("display").innerHTML = "00:00:00";
+    document.getElementById("display").innerHTML = "00:00:00:00";
     document.getElementById("startStop").innerHTML = "スタート";
 }
 
