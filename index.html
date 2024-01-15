@@ -4,11 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ストップウォッチ</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #display {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div id="display">00:00:00</div>
-    <button id="startStop">スタート</button>
-    <button id="reset">リセット</button>
+    <div>
+        <div id="display">00:00:00</div>
+        <button id="startStop">スタート</button>
+        <button id="reset">リセット</button>
+    </div>
 
     <script src="stopwatch.js"></script>
 </body>
