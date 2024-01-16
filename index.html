@@ -12,6 +12,7 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
         }
         #display {
             font-size: 2em;
@@ -23,6 +24,10 @@
             font-size: 1.2em;
             cursor: pointer;
         }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +35,14 @@
         <div id="display">00:00:00</div>
         <button id="startStop">スタート</button>
         <button id="reset">リセット</button>
+        <button id="darkModeToggle">ダークモード</button>
     </div>
+
+    <script>
+        document.getElementById('darkModeToggle').addEventListener('click', function(){
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
 
     <script src="stopwatch.js"></script>
 </body>
